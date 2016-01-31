@@ -38,7 +38,8 @@ angular.module('ui.calendar', [])
       // @return {String} fingerprint of the event object and its properties
       this.eventFingerprint = function(e) {
         if (!e._id) {
-          e._id = eventSerialId++;
+          e.id = e.id.toString();
+          // e._id = eventSerialId++;
         }
         
         var extraSignature = extraEventSignature({event: e}) || '';
